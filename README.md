@@ -1,9 +1,14 @@
 # SvelteKit + Drizzle + tRPC + Zod + Neon
 
 Everything you need to start developing a modern full stack Svelte Kit project
-Planning to add Lucia and Svelte Superforms.
+Planning to add Lucia, Svelte Query and Svelte Superforms.
 
 I suggest using shadcn-svelte for your UI
+
+## Why tRPC, isn't that redundant?
+
+Mainly because I enjoy the way tRPC deals with routes, middleware, and how it plays with Zod.
+You can also easily integrate it with Svelte Query.
 
 # create-svelte
 
