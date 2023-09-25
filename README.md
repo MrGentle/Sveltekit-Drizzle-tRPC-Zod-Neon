@@ -1,14 +1,28 @@
 # SvelteKit + Drizzle + tRPC + Zod + Neon
 
-Everything you need to start developing a modern full stack Svelte Kit project
-Planning to add Lucia, Svelte Query and Svelte Superforms.
+Everything you need to start developing a modern full stack Svelte Kit project.
 
-I suggest using shadcn-svelte for your UI
+I am planning on adding [Lucia](https://lucia-auth.com/getting-started/sveltekit/), [Svelte Query](https://sveltequery.vercel.app/overview) and [Svelte Superforms](https://superforms.rocks/).
+
+I suggest using [shadcn-svelte](https://www.shadcn-svelte.com/) or [Skeleton](https://www.skeleton.dev/) for your UI as they play nicely with TailwindCSS
 
 ## Why tRPC, isn't that redundant?
 
 Mainly because I enjoy the way tRPC deals with routes, middleware, and how it plays with Zod.
 You can also easily integrate it with Svelte Query.
+
+Feel free to remove tRPC if you want to use it.
+
+## Drizzle Kit commands
+
+Drizzle Kit comes with a nice set of commands for working with your database.
+
+``npm run db:generate`` generates migrations based on local schema
+
+``npm run db:push`` pushes local schema changes directly to the database
+
+Look [here](https://orm.drizzle.team/kit-docs/commands) for more information about the available commands.
+
 
 # create-svelte
 
