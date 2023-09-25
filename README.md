@@ -1,7 +1,7 @@
 # SvelteKit + Drizzle + tRPC + Zod + Neon
 
 Everything you need to start developing a modern full stack Svelte Kit project
-Planning to add Lucia for auth.
+Planning to add Lucia and Svelte Superforms.
 
 I suggest using shadcn-svelte for your UI
 
