@@ -17,15 +17,5 @@ export const actions = {
 		return await router
 			.createCaller(await createContext(event))
 			.tasks.remove(event.parsedData.data);
-	}),
-
-	'toggle-task': validateForm(
-		formDataTaskSchema,
-		async (event) => {
-			return await router
-				.createCaller(await createContext(event))
-				.tasks.toggle(event.parsedData.data);
-		},
-		{ debug: true }
-	)
+	})
 } satisfies Actions;

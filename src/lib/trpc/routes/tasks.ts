@@ -17,17 +17,5 @@ export const taskRoutes = t.router({
 		.query(async ({ ctx, input }) => {
 			if (!input) throw new Error("id can't be null when deleting a task");
 			return (await ctx.db.delete(task).where(eq(task.id, input.id)).returning())[0];
-		}),
-
-	toggle: publicProcedure.input(insertTaskSchema).mutation(async ({ ctx, input }) => {
-		if (input.id == null || input.id == undefined || input.id < 0)
-			throw new Error("id can't be null or negative when deleting a task");
-		return (
-			await ctx.db
-				.update(task)
-				.set({ complete: !input.complete })
-				.where(eq(task.id, input.id))
-				.returning()
-		)[0];
-	})
+		})
 });

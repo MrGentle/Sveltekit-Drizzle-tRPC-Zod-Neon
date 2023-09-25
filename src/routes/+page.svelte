@@ -1,11 +1,8 @@
 <script lang="ts">
 	import { applyAction, enhance } from '$app/forms';
-	import Checkbox from '../components/progressive-elements/checkbox/checkbox.svelte';
-	import Radio from '../components/progressive-elements/radio/radio.svelte';
 	import type { Task } from '../schema/task.js';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import { fade, scale } from 'svelte/transition';
-	import Standalone from '../components/progressive-elements/standalone/standalone.svelte';
+	import { scale } from 'svelte/transition';
 	export let data;
 	$: tasks = data.tasks;
 	let loading = false;
@@ -23,12 +20,6 @@
 			await update();
 		};
 	};
-
-	const toggleTaskEnhance: SubmitFunction = async () => {
-		return async ({ update }) => {
-			update();
-		};
-	};
 </script>
 
 <div class="flex flex-col flex-wrap content-center gap-2 rounded bg-slate-950 p-10 shadow-md">
@@ -37,18 +28,6 @@
 	{#if tasks.length > 0}
 		{#each tasks.sort((a, b) => a.id - b.id) as task}
 			<div transition:scale class="flex gap-1 rounded bg-slate-800 p-2">
-				<Checkbox
-					standalone={{
-						action: '?/toggle-task',
-						submitFunction: toggleTaskEnhance,
-						submitValues: [
-							{ name: 'id', value: task.id },
-							{ name: 'complete', value: task.complete }
-						]
-					}}
-					aria-label={`Task: ${task.name}`}
-					checked={task.complete}
-				/>
 				<h3 class="grow">{task.name}</h3>
 				<form method="post" action="?/delete-task" use:enhance>
 					<input name="id" type="number" hidden bind:value={task.id} />
